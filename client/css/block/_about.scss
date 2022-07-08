@@ -1,0 +1,252 @@
+.about {
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+.schedule {
+    background-size: contain;
+    background-image: url("../img/top.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 12rem;
+    margin-top: 2rem;
+    width: 100%;
+    
+}
+.schedule-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.schedule-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+}
+
+.schedule-h {
+    font-size: 5rem;
+    width: 100%;
+    text-align: end;
+    margin: 0;
+    color: rgb(93, 93, 93);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+  
+.schedule-subh {
+    margin: 0;
+    color: $bg-color;
+    background: $act-color;
+    padding: .5rem 1rem;
+    font-size: 2.6rem;
+    font-weight: 500;
+    border-radius: .5rem;
+    opacity: .7;
+} 
+.schedule-p {
+    margin: 0;
+    color: #696969;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+}
+
+
+.about__news {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    left: 0;
+    padding: 0;
+    margin-top: 3rem;
+    list-style-type: none;
+    overflow: hidden;
+}
+.about__news-ul {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 500%;
+    padding: 0;
+    list-style-type: none;
+    animation: aboutnew 12s infinite;
+    @keyframes aboutnew {
+        0% {left: 0;}
+        15% {left: 0;}
+        20% {left: -100%;}
+        40% {left: -100%;}
+        45% {left: -200%;}
+        65% {left: -200%;}
+        70% {left: -300%;}
+        90% {left: -300%;}
+        95% {left: -400%;}
+        100% {left: -400%;}
+    }
+
+}
+.about__news-li {
+    padding: 0 1rem;
+    width: 100%;
+    margin: 0;
+    font-weight: 500;
+    color: $base-color;
+    font-size: 4rem;
+    text-align: end;
+}
+
+
+
+.info-container {
+    margin-bottom: 2rem;
+    position: relative;
+    padding: 5rem 0 2rem 0;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.about-start {
+    margin: 0;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5rem;
+    position: relative;
+}
+.about-h {
+    position: absolute;
+    z-index: 3;
+    top: 3rem;
+    right: 0;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background: $base-color;
+    color: #fff;
+    max-width: 30rem;
+    width: 100%;
+}
+.about-img {
+    width: 100%;
+    max-width: 30rem;
+    box-shadow: -3rem -3rem 0 rgb(237, 237, 237);
+}
+.about-p {
+    text-align: center;
+    margin: 0;
+    padding: 2rem 0 0 1rem ;
+    width: 100%;
+    font-weight: 300;
+    max-width: 55rem;
+    min-height: 25rem;
+    font-size: 2rem;
+    color: $base-color;
+    
+}
+
+
+
+
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.about__p-team {
+    margin: 5rem 0;
+    width: 100%;
+    max-width: 100rem;
+    text-align: center;
+    color:$act-color;
+    font-size: 2rem;
+}
+
+.about-info__block {
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.about-info {
+    position: relative;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.about-info__img {
+    width: 15rem;
+    height: 15rem;
+    box-shadow: 0 .3rem 1rem #69696970;
+    border-radius: 3rem;
+}
+
+.about-info__txt { 
+    width: 100%;
+    max-width: 30rem;
+}
+
+
+.about-info__h {
+    text-align: center;
+    font-size: 2.2rem;
+    color: $base-color;
+    font-weight: 800;
+}
+
+.about-info__p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #686868;
+}
+
+@media screen and (min-width: 500px) {
+    .about-h {
+        left: 15rem;
+    }
+}
+
+
+@media screen and (min-width: 960px) {
+    .schedule-h {
+        font-size: 7rem;
+    }
+    .about-start { 
+        flex-direction: row;
+    }
+    .about-h { 
+        top: 27rem;
+    }
+    .about-p {
+        text-align: start;
+    }
+    .about-info__block { 
+        margin-top: 10rem;
+    }
+}
