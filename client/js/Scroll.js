@@ -45,16 +45,18 @@ export const Scroll = () => {
     } 
     findSection()
 
-
-
-
-    document.addEventListener('scroll', () => {
-        findSection()
-        if(window.scrollY > sectName[1].pos) {
+    const head = () => {
+        if(window.scrollY > 10) {
             header.classList.add('header--active')
         } else {
             header.classList.remove('header--active')
         }
+    }
+    head()
+
+    document.addEventListener('scroll', () => {
+        findSection()
+        head()
     })
     window.addEventListener('resize', () => {
         posFind()

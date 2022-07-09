@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7rem 0;
+    padding: 5rem 0 7rem;
 }
 
 .services-container {
@@ -15,9 +15,8 @@
 }
 
 .services-h {
-    margin: 0 0 4rem;
-    color:rgb(255, 255, 255); 
-    text-shadow: 0 .2rem .2rem rgb(170, 170, 170);
+    margin: 0 0 2rem;
+    color: $act-color; 
 }
 .services-ul {
     background: $act-color;

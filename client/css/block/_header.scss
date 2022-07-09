@@ -18,6 +18,7 @@
     box-shadow: 0 0 1rem #fff;
     .logo-img {
         background: none;
+        box-shadow: none;
     }
 }
 .header-container {
@@ -31,7 +32,7 @@
 
 
 .logo {
-    width: 50%;
+    width: 80%;
     font-size: 1.6rem;
     height: 100%;
     font-weight: 500;
@@ -44,7 +45,7 @@
     justify-content: flex-start;
 }
 .logo-img {
-    width: 4rem;
+    min-width: 4rem;
     height: 4rem;
     background: rgba(255, 255, 255, 0.878);
     box-shadow: 0 0 .3rem rgba(255, 255, 255, 0.521);
