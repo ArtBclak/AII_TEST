@@ -7,10 +7,9 @@ export const Form = () => {
     const mail = document.querySelector('.form-input__email')
     const phone = document.querySelector('.form-input__phone')
     const message = document.querySelector('.form-text')
-    
+    const result = document.querySelector('.result') 
     const spiner = document.querySelector('.spiner-form') 
-    const item = spiner.querySelector('.spiner-item') 
-    const result = spiner.querySelector('.spiner-result') 
+    
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault()
@@ -25,18 +24,19 @@ export const Form = () => {
         
         try {
             result.style.display = 'none'
-            spiner.style.cssText = 'background: rgba(129, 236, 255, 0.600); display: flex;'
-
+            spiner.style.display = 'flex'
+            form.style.filter = 'blur(.5rem)'
+            
             let response = await fetch('/api/form/', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(info)
             })
-
-            item.style.display = 'none'
+            
+            spiner.style.display = 'none'
             result.style.display = 'flex'
-            spiner.style.background = '#fff'
-
+            form.style.filter = 'none'
+            
             if (response.ok) {
                 result.style.color = 'green'
                 result.textContent = '✓ Thanks for your inquiry! '
@@ -45,20 +45,20 @@ export const Form = () => {
                 mail.value = ''
                 phone.value = ''
                 message.value = ''
-                setTimeout(() => spiner.style.display = 'none', 5000)
+                setTimeout(() => result.style.display = 'none', 5000)
                 
             } else {
                 result.style.color = 'red'
                 result.textContent = 'X Something wrong, try again!'
-                setTimeout(() => spiner.style.display = 'none', 2000)
+                setTimeout(() => result.style.display = 'none', 5000)
             }
         
             
         } catch (error) {
             item.style.display = 'none'
-            result.style.cssText = 'color: rred; display: flex;'
+            result.style.cssText = 'color: red; display: flex;'
             result.textContent = 'Bad connect!'
-            setTimeout(() => spiner.style.display = 'none', 2000)
+            setTimeout(() => result.style.display = 'none', 2000)
         }
 
 

@@ -28,13 +28,21 @@ export const Ham = () => {
         close()
     })
 
+    function scrollHeandler ( todo ) {
+        let content = todo
+        let section = document.querySelector(`.${content}`)
+        section.scrollIntoView({behavior: "smooth"})
+        close()
+    }
+
     ul.addEventListener('click', e => {
         let item = e.target
         if(item.tagName === 'LI'){
-            let content = item.id
-            let section = document.querySelector(`.${content}`)
-            section.scrollIntoView({behavior: "smooth"})
-            close()
+            return scrollHeandler(item.id)
+        }
+        if(item.tagName === 'A'){
+            let perent = item.closest('li')
+            return scrollHeandler(perent.id)
         }
     })
 

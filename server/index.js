@@ -19,7 +19,12 @@ app.post('/api/form/', (req, res) => {
         let data = req.body
 
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: "smtp-mail.outlook.com", 
+            secureConnection: false, 
+            port: 587,
+            tls: {
+               ciphers:'SSLv3'
+            },
             auth: {
                 user: process.env.MAIL,
                 pass: process.env.PASS
@@ -27,8 +32,8 @@ app.post('/api/form/', (req, res) => {
         })
         
         const mailOptuons = {
-            from: 'Waterlip Client',
-            to: 'eglite.ieva@gmail.com',
+            from: `<${process.env.MAIL}>`,
+            to: '0960469634kvstrt@gmail.com',
             subject: `Message from ${data.mail}!`,
 
             html: `
@@ -43,21 +48,18 @@ app.post('/api/form/', (req, res) => {
             `
         }
 
-        console.log('sdcsdcsdcsdcsdcsdc+____________________',data.mail)
+
         
         transporter.sendMail(mailOptuons, (error, info) => {
             if (error) {
-                console.log(error)
+                return res.status('500').json({ message: 'Something wrong!'})
             } else {
-                console.log(info)
+                return res.status('200').json({ message: 'We have received your request!'})
             }
         })
-
-        res.status('200').json({ message: 'We have received your request!'})
         
     } catch (e) {
-        res.status('500').json({ message: 'Something wrong!'})
-        
+        res.status('500').json({ message: 'Something wrong!'}) 
     }
 }) 
 
